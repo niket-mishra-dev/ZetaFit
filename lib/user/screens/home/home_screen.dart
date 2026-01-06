@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:fitmor/data/services/dashboard_plan_service.dart';
-import 'package:fitmor/routes/app_routes.dart';
+import 'package:fitmor/services/dashboard_plan_service.dart';
+import 'package:fitmor/user/routes/user_routes.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -893,7 +893,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             InkWell(
               borderRadius: BorderRadius.circular(8),
               onTap: () {
-                Navigator.of(context).pushNamed(RouteNames.recentActivity);
+                Navigator.of(context).pushNamed(UserRouteNames.recentActivity);
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
@@ -972,7 +972,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).pushNamed(
-                          RouteNames.workoutDetail,
+                          UserRouteNames.workoutDetail,
                           arguments: (item['id'] as num).toInt(),
                         );
                       },

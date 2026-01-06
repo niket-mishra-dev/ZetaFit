@@ -1,17 +1,17 @@
-import 'package:fitmor/ai/prompts/ai_coach_screen.dart';
-import 'package:fitmor/presentation/screens/home/home_screen.dart';
-import 'package:fitmor/presentation/screens/notifications/notification_screen.dart';
-import 'package:fitmor/presentation/screens/onboarding/onboarding_screen.dart';
-import 'package:fitmor/presentation/screens/plans/plan_details_screen.dart';
-import 'package:fitmor/presentation/screens/plans/plan_screen.dart';
-import 'package:fitmor/presentation/screens/profile/edit_profile_screen.dart';
-import 'package:fitmor/presentation/screens/profile/profile_screen.dart';
-import 'package:fitmor/presentation/screens/workouts/recent_activities.dart';
-import 'package:fitmor/presentation/screens/workouts/workout_detail_screen.dart';
-import 'package:fitmor/presentation/screens/workouts/workouts_screen.dart';
+import 'package:fitmor/user/screens/ai/prompts/ai_coach_screen.dart';
+import 'package:fitmor/user/screens/home/home_screen.dart';
+import 'package:fitmor/user/screens/notifications/notification_screen.dart';
+import 'package:fitmor/user/screens/onboarding/onboarding_screen.dart';
+import 'package:fitmor/user/screens/plans/plan_details_screen.dart';
+import 'package:fitmor/user/screens/plans/plan_screen.dart';
+import 'package:fitmor/user/screens/profile/edit_profile_screen.dart';
+import 'package:fitmor/user/screens/profile/profile_screen.dart';
+import 'package:fitmor/user/screens/workouts/recent_activities.dart';
+import 'package:fitmor/user/screens/workouts/workout_detail_screen.dart';
+import 'package:fitmor/user/screens/workouts/workouts_screen.dart';
 import 'package:flutter/material.dart';
 
-class RouteNames {
+class UserRouteNames {
   static const root = '/';
   static const home = '/home';
 
@@ -45,77 +45,77 @@ class RouteNames {
   static const register = '/register';
 }
 
-class AppRoutes {
+class UserRoutes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RouteNames.root:
-      case RouteNames.home:
+      case UserRouteNames.root:
+      case UserRouteNames.home:
         return _page(const HomeScreen());
 
-      case RouteNames.workouts:
+      case UserRouteNames.workouts:
         return _page(const WorkoutsScreen());
 
-      case RouteNames.workoutDetail:
+      case UserRouteNames.workoutDetail:
         final int workoutId = settings.arguments as int;
 
         return _page(WorkoutDetailScreen(workoutId: workoutId));
 
-      case RouteNames.recentActivity:
+      case UserRouteNames.recentActivity:
         return _page(const RecentActivityScreen());
 
-      case RouteNames.plans:
+      case UserRouteNames.plans:
         return _page(const PlanScreen());
 
-      case RouteNames.planDetail:
+      case UserRouteNames.planDetail:
         final plan = settings.arguments as Map<String, dynamic>?;
         if (plan == null) {
           return _error('Plan data missing');
         }
         return _page(PlanDetailScreen(plan: plan));
 
-      case RouteNames.profile:
+      case UserRouteNames.profile:
         return _page(const ProfileScreen());
 
-      case RouteNames.editProfile:
+      case UserRouteNames.editProfile:
         return _page(const EditProfileScreen());
 
-      case RouteNames.aiCoach:
+      case UserRouteNames.aiCoach:
         return _page(const AICoachScreen());
 
-      case RouteNames.onboarding:
+      case UserRouteNames.onboarding:
         return _page(const OnboardingScreen());
 
-      case RouteNames.progress:
+      case UserRouteNames.progress:
         return _simplePage('Progress');
 
-      case RouteNames.settings:
+      case UserRouteNames.settings:
         return _simplePage('Settings');
 
-      case RouteNames.notifications:
+      case UserRouteNames.notifications:
         return _page(const NotificationScreen());
 
-      case RouteNames.help:
+      case UserRouteNames.help:
         return _simplePage('Help & Support');
 
-      case RouteNames.about:
+      case UserRouteNames.about:
         return _simplePage('About');
 
-      case RouteNames.terms:
+      case UserRouteNames.terms:
         return _simplePage('Terms & Conditions');
 
-      case RouteNames.privacy:
+      case UserRouteNames.privacy:
         return _simplePage('Privacy Policy');
 
-      case RouteNames.faqs:
+      case UserRouteNames.faqs:
         return _simplePage('FAQs');
 
-      case RouteNames.contact:
+      case UserRouteNames.contact:
         return _simplePage('Contact Us');
 
-      case RouteNames.feedback:
+      case UserRouteNames.feedback:
         return _simplePage('Feedback');
 
-      case RouteNames.logout:
+      case UserRouteNames.logout:
         return _simplePage('Logout');
 
       default:

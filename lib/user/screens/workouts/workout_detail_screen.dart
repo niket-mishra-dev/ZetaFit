@@ -1,4 +1,4 @@
-import 'package:fitmor/presentation/screens/workouts/workout_session_screen.dart';
+import 'package:fitmor/user/screens/workouts/workout_session_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';

@@ -1,5 +1,5 @@
-import 'package:fitmor/data/models/activity_model.dart';
-import 'package:fitmor/routes/app_routes.dart';
+import 'package:fitmor/shared/models/activity_model.dart';
+import 'package:fitmor/user/routes/user_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -263,7 +263,7 @@ class _RecentActivityScreenState extends State<RecentActivityScreen> {
           onTap: () {
             Navigator.of(
               context,
-            ).pushNamed(RouteNames.workoutDetail, arguments: a.workoutId);
+            ).pushNamed(UserRouteNames.workoutDetail, arguments: a.workoutId);
           },
           child: Padding(
             padding: const EdgeInsets.all(14),

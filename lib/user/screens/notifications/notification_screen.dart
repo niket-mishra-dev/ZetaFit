@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:fitmor/presentation/screens/notifications/notification_detail_screen.dart';
+import 'package:fitmor/user/screens/notifications/notification_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
